@@ -7,3 +7,4 @@ if kgOrLbs == ('K' or 'k'):
 elif kgOrLbs == ('l' or 'L'):
     print("your wight in kg is " + str(wight / 2.205))
 print("done")
+# test
