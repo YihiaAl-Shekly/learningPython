@@ -1,6 +1,13 @@
 # some PID math
 
-# the PID vals
+"""
+how to tune the PID values
+    increase the d until the position (error) is stable (not changing a lot)
+    increase the p slowly  until the error is almost to 0 (+or- 5ish%)
+    increase the i by relatively very small increment until the error is 0
+"""
+
+# the PID values
 # proportional for the present error
 p = 8
 # integrator for the past error
@@ -24,3 +31,9 @@ pid_p = error * p
 pid_i = pid_i + (i * error)
 pid_d = (d * oldError / time)
 elevatorAngle = pid_p + pid_i + pid_d
+
+# the pid val should never be more that the motor output
+# there should be a filter for unexpected error values (noise) for the PID_d <<
+
+
+
