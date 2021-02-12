@@ -12,11 +12,7 @@ how to tune the PID values manually
 """
 
 
-class PID:
-    def __init__(self, intended_Val, actual_Val, time):
-        self.intended_Val = intended_Val
-        self.actual_Val = actual_Val
-        self.time = time
+def calc(intended_Val, actual_Val, time):
 
     # the PID values
     # proportional for the present error
@@ -27,13 +23,13 @@ class PID:
     d = 15
 
     # the angle that i want the airplane to fly at
-    intended_Val = float(50)  # from input
+    #intended_Val # from input
     # the angle that the airplane is actual flying at
-    actual_Val = float(0)  # from input
+    #actual_Val # from input
 
     error = intended_Val - actual_Val
     old_Error = error - 1  # idk how to calculate it yet
-    time = float(1)  # need to be calculated
+    #time  # need to be calculated
     # control surface control ( elevator for ex)
     pid_i = 0.0  # just for python not to be mad
 
@@ -50,3 +46,5 @@ class PID:
     if PID_out < 1000:  # 1000 is the lowest value
         PID_out = 1000
     # there should be a filter for unexpected error values (noise) for the PID_d <<
+
+
